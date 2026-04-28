@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas</title>
+    <link rel="stylesheet" href="ofertas.css">
+</head>
+<body>
+<section class="banner">
+    <div class="banner-content">
+       <ul class="c-breadcrumb">
+<li><a href="index.html">Inicio</a></li>
+<li><a href="index.html#productos">Productos</a></li>
+<li>Ofertas</li>
+</ul>
+
+<h1>¡Ofertas hasta 50% OFF!</h1>
+<p>Aprovecha los mejores descuentos de la temporada</p>
+</div>
+<div class="carrito-contador" onclick="mostrarCarrito()">
+     🛒 Carrito (<span id="contador-items">0</span>)
+ </div>
+</section>
+
+
+<section class="section">
+<h2 class="section-title">Ofertas destacadas</h2>
+<div class="products-grid">
+
+
+<div class="card"
+      data-nombre="Conjunto Falda y Top de Tiras"
+     data-precio="$52.000"
+     data-img="imagenes/oferta 1- conjunto falda y top de tiras.png"
+     data-descripcion="Conjunto moderno con falda y top de tiras, ideal para looks frescos y elegantes.">
+<span class="badge">-40%</span>
+<img src="imagenes/oferta 1- conjunto falda y top de tiras.png" alt="Conjunto Falda y Top de Tiras">
+<h3>Conjunto Falda y Top de Tiras</h3>
+<p class="old-price">$75.000</p>
+<p class="price">$52.000</p>
+<button class="btn-producto" onclick="agregarCarrito('Tenis Urban Street Style', 63000)">Añadir al carrito</button>
+
+</div>
+
+<div class="card">
+<span class="badge">SALE</span>
+<img src="imagenes/oferta 2 conjunto falda y tiras blanco.png" alt="Conjunto Falda y Top de Tiras">
+<h3>Conjunto Falda y Top de Tiras</h3>
+<p class="old-price">$70.000</p>
+<p class="price">$50.000</p>
+<button onclick="agregarAlCarrito(2)">Comprar</button>
+</div>
+<div class="card">
+<span class="badge">-30%</span>
+<img src="imagenes/oferta 3- conjunto casual adolescentes.png" alt="Conjunto Casual Adolescentes">
+<h3>Conjunto Casual Adolescentes</h3>
+<p class="old-price">$60.000</p>
+<p class="price">$42.000</p>
+<button onclick="agregarAlCarrito(3)">Comprar</button>
+</div>
+<div class="card">
+<span class="badge">-50%</span>
+<img src="imagenes/oferta 4- short y camisa con estampado.png" alt="Short y Camisa con Estampado">
+<h3>Short y camisa con estampado lindo</h3>
+<p class="old-price">$90.000</p>
+<p class="price">$45.000</p>
+<button onclick="agregarAlCarrito(4)">Comprar</button>
+</div>
+<div class="card">
+<span class="badge">-25%</span>
+<img src="imagenes/oferta 5 zapatos populares.png" alt="Zapatos Populares">
+<h3>Zapatos hermosos y casuales para todos</h3>
+<p class="old-price">$90.000</p>
+<p class="price">$67.500</p>
+<button onclick="agregarAlCarrito(5)">Comprar</button>
+</div>
+<div class="card">
+<span class="badge">-35%</span>
+<img src="imagenes/oferta 6-  sudadera.png" alt="Sudadera">
+<h3>Sudadera casual</h3>
+<p class="old-price">$50.000</p>
+<p class="price">$39.000</p>
+<button onclick="agregarAlCarrito(6)">Comprar</button>
+</div>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">Más vendidos en oferta</h2>
+<div class="products-grid">
+
+<div class="card">
+<span class="badge">TOP</span>
+<img src="imagenes/mas vendido-1 vestido largo rojo ajustado.png" alt="Vestido Largo Rojo Ajustado">
+<h3>Vestido Largo Rojo Ajustado</h3>
+<p class="old-price">$110.000</p>
+<p class="price">$75.000</p>
+<button onclick="agregarAlCarrito(3)">Comprar</button>
+</div>
+<div class="card">
+<span class="badge">-20%</span>
+<img src="imagenes/mas vendido 2-vestido negro.png" alt="Vestido Negro">
+<h3>Vestido Negro hermoso</h3>
+<p class="old-price">$90.000</p>
+<p class="price">$72.000</p>
+<button onclick="agregarAlCarrito(7)">Comprar</button>
+</div>
+<div class="card">
+<span class="badge">-20%</span>
+<img src="imagenes/mas vendido 3- conjunto sudadera estampado.png" alt="Conjunto Sudadera con Estampado">
+<h3>Conjunto Sudadera con Estampado hombre</h3>
+<p class="old-price">$65.000</p>
+<p class="price">$52.000</p>
+<button onclick="agregarAlCarrito(9)">Comprar</button>
+</div>
+<div class="card">
+<span class="badge">-20%</span>
+<img src="imagenes/mas vendido 4- conjunto sudadera flores negra.png" alt="Conjunto Sudadera con Estampado">
+<h3>Conjunto Sudadera con estampado de flores</h3>
+<p class="old-price">$65.000</p>
+<p class="price">$48.000</p>
+<button onclick="agregarAlCarrito(10)">Comprar</button>
+</div>
+</section>
+
+
+
+<!-- Modal del Carrito -->
+    <div id="modal-carrito" class="modal">
+        <div class="modal-contenido">
+            <div class="modal-header">
+                <h2>Tu Carrito</h2>
+                <button class="cerrar" onclick="cerrarCarrito()">&times;</button>
+            </div>
+            <div class="carrito-items" id="carrito-items">
+                <div class="carrito-vacio">Tu carrito está vacío</div>
+            </div>
+            <div class="carrito-resumen" id="carrito-resumen" style="display: none;">
+                <div class="resumen-fila">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="resumen-fila">
+                    <span>Envío:</span>
+                    <span id="envio">$0.00</span>
+                </div>
+                <div class="resumen-fila resumen-total">
+                    <span>Total:</span>
+                    <span id="total">$0.00</span>
+                </div>
+                <button class="btn-pagar" onclick="procederPago()">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+
+
+<div id="modalProducto" class="modal">
+  <div class="modal-box">
+
+    <span class="cerrar">&times;</span>
+
+    <div class="modal-grid">
+
+      <!-- Imagen -->
+      <div class="modal-img">
+        <img id="modalImagen" src="">
+      </div>
+
+      <!-- Info -->
+      <div class="modal-info">
+        <h2 id="modalNombre"></h2>
+        <p class="modal-precio" id="modalPrecio"></p>
+        <p class="modal-desc" id="modalDescripcion"></p>
+        <div class="modal-tallas" id="modalTallas"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</body>
+
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-content">
+<div class="footer-title">
+<h3>Cherry</h3>
+<p>Una tienda de ropa moderna y elegante para todos los gustos.</p>
+</div>
+<div class="footer-contact">
+<h3>Contacto</h3>
+<p>Teléfono: +57 321 204 7890</p>
+<p>Email: contacto_us@cherry.com</p>
+<p>Online 24/7</p>
+</div>
+<div class="footer-links">
+<h3>Enlaces</h3>
+<a href="index.html#Inicio">Inicio</a>
+<a href="nosotros.html" data-title="Quienes Somos" tabindex="0">Nosotros</a>
+<a href="index.html#productos">Productos</a>
+<a href="ofertas.html">Ofertas</a>
+</div>
+</div>
+<p>© 2026 Cherry. Todos los derechos reservados.</p>
+</footer>
+
+<script src="ofertas.js"></script>
+<script src="modal.js"></script>
+</html> 

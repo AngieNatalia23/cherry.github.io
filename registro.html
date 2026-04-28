@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro | Cherry</title>
+<link rel="stylesheet" href="styles_registro.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<section class="section-list">
+<ul class="s-list">
+<li><a href="index.html">Inicio</a></li>
+<li>Registro</li>
+</ul>
+</section>
+<body>
+
+<div class="auth-container">
+<div class="auth-card">
+<h1 class="logo">Cherry</h1>
+<h2>Crear cuenta</h2>
+<form onsubmit="register(event)">
+
+<div class="input-group">
+<i class="fas fa-user"></i>
+<input type="text" id="nombre" placeholder="Nombre completo" required>
+</div>
+<div class="input-group">
+<i class="fas fa-envelope"></i>
+<input type="email" id="correo-registro" placeholder="Correo electrónico" required>
+</div>
+<div class="input-group">
+<i class="fas fa-phone"></i>
+<input type="tel" id="telefono" placeholder="Teléfono" required>
+</div>
+<div class="input-group">
+<i class="fas fa-map-marker-alt"></i>
+<input type="text" id="direccion" placeholder="Dirección" required>
+</div>
+<div class="input-group">
+<i class="fas fa-calendar"></i>
+<input type="date" id="fecha" required>
+</div>
+<div class="input-group">
+<i class="fas fa-venus-mars"></i>
+<select id="genero">
+<option value="">Seleccionar género</option>
+<option>Masculino</option>
+<option>Femenino</option>
+<option>Otro</option>
+</select>
+</div>
+<div class="input-group">
+<i class="fas fa-user-circle"></i>
+<input type="text" id="usuario-registro" placeholder="Usuario" required>
+</div>
+<div class="input-group">
+<i class="fas fa-lock"></i>
+<input type="password" id="password-registro" placeholder="Contraseña" required>
+</div>
+<div class="input-group">
+<i class="fas fa-lock"></i>
+<input type="password" id="password-confirm" placeholder="Confirmar contraseña" required>
+</div>
+
+<button class="button-carrito" type="submit">Registrarse</button>
+<p id="mensaje-registro"></p>
+
+<p class="auth-link">
+¿Ya tienes cuenta? <a href="inicio_sesion.html">Inicia sesión</a>
+</p>
+</form>
+</div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

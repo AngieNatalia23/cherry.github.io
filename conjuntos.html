@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conjuntos</title>
+<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="estilos_paginas.css">
+</head>
+<body>
+
+<section class="categoria">
+<body>
+<section class="nosotros-banner">
+<ul class="c-breadcrumb">
+<li><a href="index.html">Inicio</a></li>
+<li><a href="index.html#productos">Productos</a></li>
+<li>Conjuntos</li>
+</ul>
+</section>
+
+<div class="productos-grid">
+
+<div class="producto-card producto"
+      data-nombre="Conjunto urbano Gothic Chic"
+      data-precio="$50000"
+      data-img ="imagenes/conjunto camiseta y short.webp"
+      data-descripcion= "Ideal para quienes buscan un look moderno, cómodo y con personalidad. 
+      Perfecto para el gimnasio, paseos por la ciudad o para relajarte en casa con estilo.
+      ¡No te pierdas la oportunidad de añadir este conjunto icónico a tu guardarropa!
+       Eleva tu estilo casual con el Conjunto Urbano Gothic B y marca tendencia donde vayas."
+    >
+<img src="imagenes/conjunto camiseta y short.webp">
+<h3>Conjunto urbano Gothic Chic</h3>
+<div class="rating">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star-half-alt"></i>
+</div>
+<p>$50.000</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Conjunto urbano Gothic Chic', 50000)">Añadir al carrito</button>
+</div>
+
+<div class="producto-card producto"
+     data-nombre="Conjunto deportivo Empire State"
+    data-precio="$65000"
+    data-img ="imagenes/conjunto bermuda y pantalon con diseño.png"
+    data-descripcion="Perfecto para un look casual y moderno. 
+    Combínalo con tus zapatillas favoritas y accede a la moda urbana.
+    ¡No te quedes sin el tuyo! Elige el estilo, elige la comodidad, elige Empire State Vibes".
+  >
+<img src="imagenes/conjunto bermuda y pantalon con diseño.png">
+<h3>Conjunto deportivo Empire State</h3>
+<div class="rating">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star-half-alt"></i>
+</div>
+<p>$65.000</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Conjunto deportivo Empire State', 65000)">Añadir al carrito</button>
+</div>
+
+<div class="producto-card"
+     data-nombre="Conjunto Smiley Dripping Face"
+    data-precio="$96000"
+    data-img ="imagenes/conjunto pantalon y bermuda con diseño hombre.png"
+    data-descripcion="Ideal para tu día a día, para salir con amigos,
+     para una tarde de relax o para marcar tendencia en cualquier ocasión casual. 
+     ¡Te sentirás cómodo y con estilo allá donde vayas!
+     Combínalo con tus zapatillas favoritas y  accede a la moda urbana. 
+      ¡No te quedes sin el tuyo! Elige el estilo, elige la comodidad, 
+     elige este conjunto con estampado único."
+    >
+<img src="imagenes/conjunto pantalon y bermuda con diseño hombre.png" alt="Conjunto bermuda y pantalon hombre">
+<h3>Conjunto Smiley Dripping Face</h3>
+<p>$96.000</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Conjunto Smiley Dripping Face', 96000)">Añadir al carrito</button>
+</div>
+
+<div class="producto-card"
+        data-nombre="Conjunto Street Struggle"
+        data-precio="$90000"
+        data-img ="imagenes/conjunto sudadera con diseño.png"
+        data-descripcion="¿Listo para destacar? Este conjunto es tu declaración de intenciones. 
+        El diseño vanguardista del hoodie, con su impactante gráfica que evoca la fuerza interior,
+         se complementa a la perfección con el pantalón jogger en un estilo audaz y cautivador. Fabricado con materiales suaves y cómodos,
+         te sentirás increíble mientras proyectas una actitud imparable. ¡No te conformes, impón tu estilo!"
+        >
+<img src="imagenes/conjunto sudadera con diseño.png" alt="Conjunto sudadera con diseño">
+<h3>Conjunto Street Struggle</h3>
+<p>$90.000</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Conjunto Street Struggle', 90000)">Añadir al carrito</button>
+</div>
+
+<div class="producto-card"
+        data-nombre="Conjunto High Hopes Vibes"
+        data-precio="$78900"
+        data-img ="imagenes/conjunto sudadera diseño.png"
+        data-descripcion="¡Despierta tu potencial con el conjunto High Hopes! Diseñado para los espíritus libres y 
+                     los amantes del estilo urbano,este conjunto te ofrece una combinación 
+                     explosiva de comodidad y diseño impactante."
+>
+<img src="imagenes/conjunto sudadera diseño.png" alt="Conjunto sudadera diseño">
+<h3>Conjunto High Hopes Vibes</h3>
+<p>$78.900</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Conjunto High Hopes Vibes', 78900)">Añadir al carrito</button>
+</div>
+
+<div class="producto-card"
+        data-nombre="Conjunto Urbano LA Vibes"
+        data-precio="$86500"
+        data-img ="imagenes/conjunto sudadera.png"
+        data-descripcion="¡Siente la energía de LA en cada paso con el Conjunto Urbano LA Vibes
+         Diseñado para los que viven la ciudad al máximo, este conjunto combina la comodidad de un 
+         chándal con el estilo más cool. Su degradado moderno y el audaz estampado Los Angeles te harán destacar.
+        ¡Pontelo y lleva tu estilo al siguiente nivel!"
+        >
+<img src="imagenes/conjunto sudadera.png" alt="Conjunto sudadera">
+<h3>Conjunto Urbano LA Vibes</h3>
+<p>$86.500</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+</div>  
+<button class="btn-producto" onclick="agregarCarrito('Conjunto Urbano LA Vibes', 86500)">Añadir al carrito</button>
+</div>
+
+<div class="producto-card"
+        data-nombre="Conjunto Belleza Serena"
+        data-precio="$86500"
+        data-img ="imagenes/conjunto sudadera.png"
+        data-descripcion="¡Despierta tu belleza interior con nuestro conjunto Belleza Serena!
+        Presentamos un diseño cautivador en negro azabache, adornado con una mariposa rosa vibrante que simboliza la transformación y la delicadeza. 
+        Confeccionado para ofrecer la máxima comodidad, este conjunto es la elección ideal para quienes 
+        buscan destacar con elegancia y un toque de rebeldía. ¡Siéntete espectacular, siéntete tú!
+        ¡No esperes más para añadir esta joya a tu guardarropa!"
+    >
+<img src="imagenes/conjunto sudadera mariposa mujer.png" alt="Conjunto sudadera">
+<h3>Conjunto Belleza Serena</h3>
+<p>$86.500</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Conjunto Belleza Serena', 86500)">Añadir al carrito</button>
+</div>
+</div>
+
+</section>
+
+
+<footer>
+<div class="footer-content">
+<div class="footer-title">
+<h3>Cherry</h3>
+<p>Una tienda de ropa moderna y elegante para todos los gustos.</p>
+</div>
+<div class="footer-contact">
+<h3>Contacto</h3>
+<p>Teléfono: +57 321 204 7890</p>
+<p>Email: contacto_us@cherry.com</p>
+<p>Online 24/7</p>
+</div>
+<div class="footer-links">
+<h3>Enlaces</h3>
+<a href="index.html">Inicio</a>
+<a href="nosotros.html" data-title="Quienes Somos" tabindex="0">Nosotros</a>
+<a href="#productos">Productos</a>
+<a href="ofertas.html" data-title="Ofertas" tabindex="0">Ofertas</a>
+</div>
+</div>
+<p>© 2026 Cherry. Todos los derechos reservados.</p>
+</footer>
+
+<div id="modalProducto" class="modal">
+  <div class="modal-box">
+
+    <span class="cerrar">&times;</span>
+
+    <div class="modal-grid">
+
+      <!-- Imagen -->
+      <div class="modal-img">
+        <img id="modalImagen" src="">
+      </div>
+
+      <!-- Info -->
+      <div class="modal-info">
+        <h2 id="modalNombre"></h2>
+        <p class="modal-precio" id="modalPrecio"></p>
+        <p class="modal-desc" id="modalDescripcion"></p>
+
+        <!-- Tallas -->
+        <div class="modal-tallas">
+          <span>S</span>
+          <span>M</span>
+          <span>L</span>
+          <span>XL</span>
+        </div>
+
+        <button id="btnComprarModal" class="btn-producto">
+          Añadir al carrito
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+<script src="modal.js"></script>
+
+
+
+</body>
+</html>

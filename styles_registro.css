@@ -1,0 +1,205 @@
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#fff0f3,#ffe5ec);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+/* CONTENEDOR */
+.auth-container{
+padding: 0%;
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/*LISTA DE SECCIONES*/
+.s-list{
+display:inline-flex;
+flex-wrap:wrap;
+align-items:center;
+gap:.4rem;
+background:rgba(255,255,255,.7);
+backdrop-filter:blur(8px);
+padding:8px 16px;
+border-radius:999px;
+margin:20px;
+list-style:none;
+font-size:.95rem;
+color:#4d4d4d;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.s-list ul {
+display:flex;
+gap:20px;
+list-style:none;
+}
+.s-list a{
+color:#4d4d4d;
+text-decoration:none;
+transition:color .2s ease;
+}
+.s-list a:hover{
+color:var(--primary);
+}
+.nosotros-banner{
+background:linear-gradient(rgba(159,7,18,0.9),rgba(159,7,18,0.9));
+background-size:cover;
+background-position:center;
+margin: 20px 0;
+padding: 50px 20px;
+text-align:center;
+color:white;
+border-radius:16px;
+}
+
+
+
+.section-list{
+display:inline-flex;
+flex-wrap:wrap;
+align-items:center;
+gap:.4rem;
+background:rgba(255,255,255,.7);
+backdrop-filter:blur(8px);
+padding:8px 16px;
+border-radius:999px;
+margin:20px;
+list-style:none;
+font-size:.95rem;
+color:#4d4d4d;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+.section-list li{
+display:flex;
+align-items:center;
+}
+.section-list li+li::before{
+content:'/';
+color:#b5b5b5;
+margin:0 8px;
+}
+.section-list a{
+color:#4d4d4d;
+text-decoration:none;
+transition:color .2s ease;
+}
+.section-list a:hover{
+color:var(--primary);
+}
+.section-list li:last-child{
+font-weight:600;
+color:#333;
+}
+
+
+
+
+
+
+
+
+
+
+/* CARD */
+.auth-card{
+background:#fff;
+padding:60px;
+border-radius:18px;
+width:100%;
+max-width:390px;
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
+animation:fadeIn 0.6s ease;
+}
+
+/* LOGO */
+.logo{
+text-align:center;
+color:#9F0712;
+margin-bottom:10px;
+}
+
+.auth-card h2{
+text-align:center;
+margin-bottom:20px;
+color:#9F0712;
+}
+
+/* INPUT GROUP */
+.input-group{
+position:relative;
+margin-bottom:15px;
+}
+
+.input-group i{
+position:absolute;
+left:12px;
+top:50%;
+transform:translateY(-50%);
+color:#999;
+}
+
+.input-group input,
+.input-group select{
+width:100%;
+padding:12px 12px 12px 38px;
+border-radius:10px;
+border:1px solid #ddd;
+transition:.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus{
+border-color:#9F0712;
+box-shadow:0 0 6px rgba(159,7,18,0.3);
+outline:none;
+}
+
+/* BOTON */
+.button-carrito{
+width:100%;
+padding:12px;
+border:none;
+border-radius:25px;
+background:linear-gradient(135deg,#9F0712,#d62839);
+color:#fff;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+.button-carrito:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 20px rgba(159,7,18,0.3);
+}
+
+/* LINK */
+.auth-link{
+text-align:center;
+margin-top:15px;
+font-size:14px;
+}
+
+.auth-link a{
+color:#9F0712;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* ANIMACION */
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:480px){
+.auth-card{
+padding:25px;
+}
+}

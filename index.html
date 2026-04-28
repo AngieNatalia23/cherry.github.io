@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cherry | Tienda de ropa</title>
+<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
+</head>
+<body>
+<header class="header">
+<div class="header-container">
+<div class="logo">
+<img src="images/LOGO.png" width="125px" alt="Cherry Logo">
+</div>
+
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+<label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+<nav class="main-nav">
+<ul>
+<li><a href="index.html#inicio">Inicio</a></li>
+<li><a href="index.html#productos">Productos</a></li>
+<li><a href="nosotros.html">Nosotros</a></li>
+<li><a href="ofertas.html">Ofertas</a></li>
+</ul>
+</nav>
+<!-- carrito e inicio de sesión-->
+<!-- LOGIN FORM -->
+<div id="login-form-container" class="login-form-container">
+  <div class="login-form">
+    <h2>Iniciar sesión</h2>
+    <input type="email" id="correo" placeholder="Correo electrónico">
+    <input type="password" id="password" placeholder="Contraseña">
+    <button onclick="login()">Entrar</button>
+    <p id="mensaje-login"></p>
+    <button onclick="toggleLogin()" class="close-btn">✕</button>
+    <p class="modal-link">¿No tienes cuenta? <a href="#" onclick="toggleLogin(); toggleRegister(); return false;">Regístrate</a></p>
+  </div>
+</div>
+
+<div id="register-form-container" class="login-form-container">
+  <div class="login-form">
+    <h2>Registrarse</h2>
+    <input type="text" id="usuario-registro" placeholder="Usuario">
+    <input type="email" id="correo-registro" placeholder="Correo electrónico">
+    <input type="password" id="password-registro" placeholder="Contraseña">
+    <input type="password" id="password-confirm" placeholder="Confirmar contraseña">
+    <button onclick="register()">Registrarse</button>
+    <p id="mensaje-registro"></p>
+    <button onclick="toggleRegister()" class="close-btn">✕</button>
+    <p class="modal-link">¿Ya tienes cuenta? <a href="#" onclick="toggleRegister(); toggleLogin(); return false;">Inicia sesión</a></p>
+  </div>
+</div>
+
+
+<div class="carrito-top" onclick="toggleCarrito()">
+  <i class="fas fa-shopping-cart"></i>
+  <span id="contador">0</span>
+</div>
+
+<div id="carrito-desplegable" class="carrito-desplegable">
+  <h3>🛒 Tu carrito</h3>
+  <ul id="lista-carrito"></ul>
+  <hr>
+  <p>Total: $<span id="total">0</span></p>
+  <button onclick="vaciarCarrito()">Vaciar</button>
+  <button onclick="contraentrega()">Contraentrega</button>
+  <button onclick="pagarNequi()">Nequi</button>
+  <button onclick="pagarPayPal()">PayPal</button>
+  <button onclick="pagarWeb()">Pagar</button>
+</div>
+<div class="header-actions"> 
+  <button class="btn-login icon-btn" onclick="toggleLogin()" title="Iniciar sesión">
+    <i class="fas fa-user"></i>
+  </button>
+  <button class="icon-btn" onclick="toggleRegister()" title="Registrarse">
+    <i class="fas fa-user-plus"></i>
+  </button>
+
+<input type="text" id="buscador" placeholder="Buscar..." onkeyup="buscarProducto()">
+</div>
+</div>
+</header>
+
+<main>
+<!-- BANNER -->
+<section class="banner">
+<div id="carrusel-banners">
+<div class="slider">
+  <div class="slides">
+    <div class="slide">
+      <img src="images/banner index.png" alt="Banner 1: Descubre tu estilo">
+      <div class="slide-text">
+        <h2>Descubre tu estilo con Cherry</h2>
+        <p>Ropa moderna, elegante y accesible para todos</p>
+        <a href="#productos" class="btn-principal">Ver productos</a>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="images/Banner sales.png" alt="Banner 2: Ofertas especiales">
+      <div class="slide-text">
+        <h2>Ofertas hasta 50% OFF</h2>
+        <p>Aprovecha los mejores descuentos de la temporada</p>
+        <a href="ofertas.html" class="btn-principal">Ver ofertas</a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <button class="prev" onclick="moveBannerSlide(-1)">❮</button>
+  <button class="next" onclick="moveBannerSlide(1)">❯</button>
+  <div class="dots">
+    <span class="dot" onclick="currentBannerSlide(0)"></span>
+    <span class="dot" onclick="currentBannerSlide(1)"></span>
+  </div>
+</div>
+</div>
+</section>
+
+
+
+
+
+<!-- PRODUCTOS -->
+<section id="productos" class="section-productos">
+<h2>Productos</h2>
+
+<div class="productos-grid">
+
+<section class="categoria">
+<h2>Pantalones</h2>
+<div class="productos-grid">
+
+
+
+<div class="producto-card producto"
+     data-nombre="Jeans wide leg gris desgastado" 
+    data-precio="$42000"
+    data-img ="imagenes/pantalon rectos anchos.png"
+    data-descripcion="Jeans wide leg gris desgastado con un diseño moderno y cómodo, perfecto para un look casual y a la moda."
+    >
+<img src="imagenes/pantalon rectos anchos.png">
+<h3>Jeans wide leg gris desgastado</h3>
+<div class="rating">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star-half-alt"></i>
+</div>
+<p>$42.000</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Jeans wide leg gris desgastado', 42000)">Añadir al carrito</button>
+</div>
+
+<div class="producto-card producto"
+     data-nombre="Jeans de Corte Ancho Azul" 
+    data-precio="$56000"
+    data-img ="imagenes/jean azul bota recta.webp"
+    data-descripcion="¡Descubre tu nuevo favorito! Estos jeans de corte ancho no solo te hacen sentir cómoda, 
+    sino que también te transforman en la protagonista de cualquier escena. 
+    ¡Haz que tu estilo diga “¡Sí, soy libre y me encanta!”!"
+    >
+<img src="imagenes/jean azul bota recta.webp">
+<h3>Jeans de Corte Ancho Azul</h3>
+<div class="rating">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star-o-"></i> 
+</div>
+<p>$56.000</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Jeans de Corte Ancho Azul', 56000)">Añadir al carrito</button>
+</div>
+<a href="pantalones.html" class="ver-mas">Ver más</a>
+</section>
+
+<!-- FALDAS Y VESTIDOS -->
+<section class="categoria">
+<h2>Faldas y vestidos</h2>
+
+<div class="productos-grid">
+
+<div class="producto-card producto"
+     data-nombre="Falda Diosa del verano"
+    data-precio="$40000"
+    data-img ="imagenes/Falda mini negra.png"
+    data-descripcion="Esta falda es la esencia de la feminidad y el estilo veraniego.
+     Con su diseño mini y color negro, es perfecta para lucir fresca y elegante en cualquier ocasión durante los días soleados. 
+    Su corte favorecedor y tela ligera te harán sentir como una verdadera diosa del verano."
+  >
+<img src="imagenes/Falda mini negra.png">
+<h3>Falda Diosa del verano</h3>
+<div class="rating">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star-half-alt"></i>
+</div>
+<p>$40.000</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Falda Diosa del verano', 40000)">Añadir al carrito</button>
+</div>
+
+<div class="producto-card producto"
+     data-nombre="Vestido boho Floral"
+    data-precio="$70000"
+    data-img ="imagenes/vestido con estampado.png"
+    data-descripcion="¡Descubre el vestido que transforma cualquier día en una celebración! Con su diseño fresco y su silueta que celebra tu figura, 
+    “Flores de Verano” es tu aliada para brillar con naturalidad y estilo. ¡No esperes más —¡tú mereces lucir así! 🌿"
+  >
+<img src="imagenes/vestido con estampado.png">
+<h3>Vestido boho Floral </h3>
+<div class="rating">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star-half-alt"></i>
+</div>
+<p>$70.000</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Vestido boho Floral', 70000)">Añadir al carrito</button>
+</div>
+<a href="faldas.html" class="ver-mas">Ver más</a>
+</section>
+
+<!-- CONJUNTOS -->
+<section class="categoria">
+<h2>Conjuntos</h2>
+<div class="productos-grid">
+
+<div class="producto-card producto"
+     data-nombre="Conjunto deportivo Empire State"
+    data-precio="$65000"
+    data-img ="imagenes/conjunto bermuda y pantalon con diseño.png"
+    data-descripcion="Perfecto para un look casual y moderno. 
+    Combínalo con tus zapatillas favoritas y accede a la moda urbana.
+    ¡No te quedes sin el tuyo! Elige el estilo, elige la comodidad, elige Empire State Vibes".
+  >
+<img src="imagenes/conjunto bermuda y pantalon con diseño.png">
+<h3>Conjunto deportivo Empire State</h3>
+<div class="rating">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star-half-alt"></i>
+</div>
+<p>$65.000</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+</div><button class="btn-producto" onclick="agregarCarrito('Conjunto deportivo Empire State', 65000)">Añadir al carrito</button>
+</div>
+
+<div class="producto-card producto"
+      data-nombre="Conjunto urbano Gothic Chic"
+      data-precio="$50000"
+      data-img ="imagenes/conjunto camiseta y short.webp"
+      data-descripcion= "Ideal para quienes buscan un look moderno, cómodo y con personalidad. 
+      Perfecto para el gimnasio, paseos por la ciudad o para relajarte en casa con estilo.
+      ¡No te pierdas la oportunidad de añadir este conjunto icónico a tu guardarropa!
+       Eleva tu estilo casual con el Conjunto Urbano Gothic B y marca tendencia donde vayas."
+    >
+<img src="imagenes/conjunto camiseta y short.webp">
+<h3>Conjunto urbano Gothic Chic</h3>
+<div class="rating">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star-half-alt"></i>
+</div>
+<p>$50.000</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Conjunto urbano Gothic Chic', 50000)">Añadir al carrito</button>
+</div>
+<a href="conjuntos.html" class="ver-mas">Ver más</a>
+</section>
+<!-- CAMISAS Y BLUSAS -->
+ 
+<section class="categoria">
+<h2>Camisas y blusas</h2>
+<div class="productos-grid">
+
+<div class="producto-card producto"
+      data-nombre="Camiseta Lowkey Streetwear"
+      data-precio="$30000"
+      data-img ="imagenes/blusas-camisas/camisa blanca con diseño.png"
+      data-descripcion="¡Descubre la camisa que transforma tu estilo! Con su diseño fresco y detalles únicos, 
+      esta camisa blanca es tu aliada perfecta para lucir elegante y a la moda en cualquier ocasión. ¡No esperes más, hazla tuya y brilla con confianza!"
+    >
+<img src="imagenes/blusas-camisas/camisa blanca con diseño.png">
+<h3>Camiseta Lowkey Streetwear</h3>
+<div class="rating">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star-half-alt"></i>
+</div>
+<p>$30.000</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Camiseta Lowkey Streetwear', 30000)">Añadir al carrito</button>
+</div>
+
+<div class="producto-card producto"
+      data-nombre="Elegance Black Camisa Manga corta con cuello" 
+      data-precio="$30000"
+      data-img ="imagenes/blusas-camisas/camisa con botones casual.webp"
+      data-descripcion="¡Descubre la camisa que transforma tu estilo!
+       Con su diseño fresco y detalles únicos, esta camisa blanca es tu aliada perfecta 
+       para lucir elegante y a la moda en cualquier ocasión.
+       ¡No esperes más, hazla tuya y brilla con confianza!"
+    >
+<img src="imagenes/blusas-camisas/camisa con botones casual.webp">
+<h3>Elegance Black Camisa Manga corta con cuello</h3>
+<div class="rating">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star-o-alt"></i>
+</div>
+<p>$30.000</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">S</span>
+  <span onclick="seleccionarTalla(this)">M</span>
+  <span onclick="seleccionarTalla(this)">L</span>
+  <span onclick="seleccionarTalla(this)">XL</span>
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Elegance Black Camisa Manga corta con cuello', 30000)">Añadir al carrito</button>
+</div>
+<a href="camisas.html" class="ver-mas">Ver más</a>
+</section>
+
+<!-- ZAPATOS -->
+<section class="categoria">
+<h2>Zapatos</h2>
+<div class="producto-grid">
+
+<div class="producto-card producto"
+      data-nombre=" Zapatillas Cloud White" 
+      data-precio="$41000"
+      data-img ="imagenes/Tenis casuales para mujer.webp"
+      data-descripcion="¡Haz que tus pies brillen sin esfuerzo! Estas zapatillas no solo te harán sentir cómoda, sino que también te darán un aire de confianza y estilo. 
+      ¡Haz de cada paso un momento de moda! ¡Haz clic ahora y haz que tus pies se sientan como en la nube!"
+    > 
+<img src="imagenes/Tenis casuales para mujer.webp">
+<h3>Zapatillas Cloud White</h3>
+<div class="rating">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<p>$41.000</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">34</span>
+  <span onclick="seleccionarTalla(this)">36</span>
+  <span onclick="seleccionarTalla(this)">38</span>
+  <span onclick="seleccionarTalla(this)">40</span>
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Zapatillas Cloud White', 41000)">Añadir al carrito</button>
+</div>
+
+<div class="producto-card producto"
+      data-nombre="Tenis Urban Street Style" 
+      data-precio="$63000"
+      data-img ="imagenes/tenis tipo skate hombre.webp"
+      data-descripcion="¡Destaca en la jungla de asfalto con nuestras Zapatillas Urban Street Style! 
+      Diseñadas para los que marcan tendencia y no temen expresar su individualidad, estas zapatillas son la fusión perfecta entre comodidad y 
+      un estilo vanguardista."
+    >
+<img src="imagenes/tenis tipo skate hombre.webp">
+<h3>Tenis Urban Street Style</h3>
+<div class="rating">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<p>$63.000</p>
+<div class="tallas">
+  <span onclick="seleccionarTalla(this)">34</span>
+  <span onclick="seleccionarTalla(this)">36</span>
+  <span onclick="seleccionarTalla(this)">38</span>
+  <span onclick="seleccionarTalla(this)">40</span>
+</div>
+<button class="btn-producto" onclick="agregarCarrito('Tenis Urban Street Style', 63000)">Añadir al carrito</button>
+</div>
+<a href="zapatos.html" class="ver-mas">Ver más</a>
+    </div>
+  </section>
+  </div>
+</section>
+
+</main>
+<!-- FOOTER -->
+
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-title">
+<h3>Cherry</h3>
+<p>Una tienda de ropa moderna y elegante para todos los gustos.</p>
+</div>
+<div class="footer-contact">
+<h3>Contacto</h3>
+<p>Teléfono: +57 321 204 7890</p>
+<p>Email: contacto_us@cherry.com</p>
+<p>Online 24/7</p>
+</div>
+<div class="footer-links">
+<h3>Enlaces</h3>
+<a href="index.html#inicio">Inicio</a>
+<a href="nosotros.html" data-title="Quienes Somos" tabindex="0">Nosotros</a>
+<a href="index.html#productos">Productos</a>
+<a href="ofertas.html">Ofertas</a>
+</div>
+</div>
+<p>© 2026 Cherry. Todos los derechos reservados.</p>
+</footer>
+
+
+<div id="modalProducto" class="modal">
+  <div class="modal-box">
+
+    <span class="cerrar">&times;</span>
+
+    <div class="modal-grid">
+
+      <!-- Imagen -->
+      <div class="modal-img">
+        <img id="modalImagen" src="">
+      </div>
+
+      <!-- Info -->
+      <div class="modal-info">
+        <h2 id="modalNombre"></h2>
+        <p class="modal-precio" id="modalPrecio"></p>
+        <p class="modal-desc" id="modalDescripcion"></p>
+        <div class="modal-tallas" id="modalTallas"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL GALERÍA -->
+<div id="modalGaleria" class="modal-galeria">
+  <span onclick="cerrarGaleria()" class="close">&times;</span>
+  <img id="imgGrande" src="" alt="Imagen grande">
+  <div id="miniaturas" class="miniaturas"></div>
+</div>
+
+<script src="script.js"></script>
+<script src="modal.js"></script>
+
+</body>
+
+</html>

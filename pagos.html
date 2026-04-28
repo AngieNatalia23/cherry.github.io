@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagos | Cherry</title>
+<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="styles_pagos.css">
+</head>
+
+<body>
+<header class="header">
+<div class="container">
+<h1>Cherry - Pagos</h1>
+</div>
+</header>
+<section class="nosotros-banner">
+<ul class="c-breadcrumb">
+<li><a href="index.html">Inicio</a></li>
+<li><a href="carrito.html">Carrito</a></li>
+<li>Pagos</li>
+</ul>
+</section>
+
+
+<main class="container">
+<div class="progress">
+<div class="active">Carrito</div>
+<div>Pago</div>
+<div>Confirmación</div>
+</div>
+<div class="flex">
+<section class="card" style="flex:1">
+<h2>Datos del cliente</h2>
+<label for="name">Nombre completo</label>
+<input placeholder="Nombre completo" id="name" name="name" required>
+<label for="address">Dirección</label>
+<input placeholder="Dirección" id="address" name="address" required>
+<label for="city">Ciudad</label>
+<input placeholder="Ciudad" id="city" name="city">
+<label for="zip">Código postal</label>
+<input placeholder="Código postal" id="zip" name="zip">
+<label for="country">País</label>
+<select id="country" name="country"><option>Colombia</option></select>
+
+<h2>Método de pago</h2>
+<label for="payment">Selecciona método</label>
+<select id="payment" name="payment">
+<option value="card">Tarjeta</option>
+<option value="cash">Contra entrega</option>
+</select>
+
+<div id="cardInfo">
+<label for="cardNumber">Número de tarjeta</label>
+<input placeholder="Número de tarjeta" id="cardNumber" name="cardNumber">
+<label for="expiry">MM/AA</label>
+<input placeholder="MM/AA" id="expiry" name="expiry">
+<label for="cvv">CVV</label>
+<input placeholder="CVV" id="cvv" name="cvv">
+</div>
+
+<label><input type="checkbox" id="saveData"> Guardar datos</label>
+<button type="button" onclick="checkout()">Pagar</button>
+</section>
+
+<aside class="card" style="flex:1">
+<h2>Resumen del carrito</h2>
+<div id="cart"></div>
+<div class="card">
+<p>Subtotal: $<span id="subtotal">0.00</span></p>
+<p>Envío: <span id="shipping">Envio totalmente gratis</span></p>
+<p class="total">Total: $<span id="total">0.00</span></p>
+</div>
+</aside>
+</div>
+</main>
+
+
+<script>
+
+function renderCart(){
+    let container=document.getElementById('cart');
+    container.innerHTML="";
+    let subtotal=0;
+
+    cart.forEach(item=>{
+        subtotal += item.price * item.qty;
+        container.innerHTML += `
+        <div class="cart-item">
+            <img src="${item.img}" alt="${item.name}">
+            <div>${item.name} - $${item.price}</div>
+            <input type="number" value="${item.qty}" min="1" onchange="updateQty(${item.id}, this.value)">
+            <button type="button" onclick="removeItem(${item.id})">X</button>
+        </div>`;
+    });
+
+    let tax = subtotal * 0.1;
+    let shipping = 5;
+    let total = subtotal + tax + shipping;
+
+    document.getElementById('subtotal').innerText = subtotal.toFixed(2);
+    document.getElementById('tax').innerText = tax.toFixed(2);
+    document.getElementById('shipping').innerText = shipping.toFixed(2);
+    document.getElementById('total').innerText = total.toFixed(2);
+}
+
+function updateQty(id, qty){
+    cart = cart.map(i => i.id === id ? {...i, qty: +qty} : i);
+    renderCart();
+}
+
+function removeItem(id){
+    cart = cart.filter(i => i.id !== id);
+    renderCart();
+}
+
+function checkout(){
+    let name = document.getElementById('name').value;
+    let address = document.getElementById('address').value;
+    let card = document.getElementById('cardNumber').value;
+
+    if(!name || !address){
+        alert("Completa los campos obligatorios.");
+        return;
+    }
+
+    if(document.getElementById('payment').value === "card"){
+        if(card.length < 16){
+            alert("Tarjeta inválida.");
+            return;
+        }
+    }
+
+    alert("Pago procesado (simulado).");
+}
+
+renderCart();
+</script>
+</body>
+<!-- FOOTER -->
+<footer>
+<div class="footer-content">
+<div class="footer-title">
+<h3>Cherry</h3>
+<p>Una tienda de ropa moderna y elegante para todos los gustos.</p>
+</div>
+<div class="footer-contact">
+<h3>Contacto</h3>
+<p>Teléfono: +57 321 204 7890</p>
+<p>Email: contacto_us@cherry.com</p>
+<p>Online 24/7</p>
+</div>
+<div class="footer-links">
+<h3>Enlaces</h3>
+<a href="index.html">Inicio</a>
+<a href="nosotros.html" data-title="Quienes Somos" tabindex="0">Nosotros</a>
+<a href="#productos">Productos</a>
+<a href="ofertas.html">Ofertas</a>
+</div>
+</div>
+<p>© 2026 Cherry. Todos los derechos reservados.</p>
+</footer>
+</html>
