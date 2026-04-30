@@ -714,6 +714,27 @@ footer > p {
     font-size: 11px;
     margin: 12px 0 0;
 }
+
+
+.Social-links{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-item{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 20px;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
 @media (max-width: 860px) {
     .footer-content {
         grid-template-columns: repeat(2, minmax(220px, 1fr));
