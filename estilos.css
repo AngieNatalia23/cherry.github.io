@@ -735,6 +735,11 @@ footer > p {
     transition: 0.3s;
 }
 
+.social-item:hover{
+    transform: translateY(-3px);
+    color: #9F0712;
+}
+
 @media (max-width: 860px) {
     .footer-content {
         grid-template-columns: repeat(2, minmax(220px, 1fr));
