@@ -360,9 +360,6 @@ transform: scale(1.2);
 }
 
 
-/* ========================= */
-/* GRID MÁS LIMPIO */
-/* ========================= */
 
 .productos-grid{
     display:grid;
@@ -1253,3 +1250,4 @@ footer > p {
   from {transform: scale(0.8);}
   to {transform: scale(1);}
 }
+/* ========================= */
